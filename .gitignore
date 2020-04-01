@@ -1,3 +1,8 @@
 node_modules
-*.lock
+nohup.out
+.DS_Store
+yarn.lock
 *lock.json
+dev.js
+
+
