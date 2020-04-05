@@ -10,6 +10,7 @@ require('./models/Blog');
 require('./services/passport');
 require('./services/cache');
 
+console.log('Index before mongoose');
 mongoose.Promise = global.Promise;
 //mongoose.connect(keys.mongoURI, { useMongoClient: true });
 mongoose.connect(keys.mongoURI, {
@@ -19,7 +20,7 @@ mongoose.connect(keys.mongoURI, {
   if (err) {
     console.log("Mongo Connect Error : ", err.message);
   } else {
-    console.log("Successfully connected to the mongodb");
+    console.log("Index - Successfully connected to the mongodb");
   }
 });
 

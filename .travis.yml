@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "10"
+  - "8"
 dist: trusty
 services:
   - mongodb
@@ -17,5 +17,5 @@ install:
   - npm run build
 script:
   - nohup npm run start &
-  - sleep 5
+  - sleep 10
   - npm run test

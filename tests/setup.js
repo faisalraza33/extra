@@ -13,5 +13,5 @@ mongoose.connect(keys.mongoURI, {
     console.log("Error :", err.message);
     return;
   }
-  console.log("Successfuly connected to the mongoose  db!");
+  console.log("Setup - Successfuly connected to the mongoose  db!");
 });
