@@ -48,6 +48,8 @@ if (['production', 'ci'].includes(process.env.NODE_ENV)) {
 }
 
 const PORT = process.env.PORT || 5000;
+
+console.log('Port is :', PORT)
 app.listen(PORT, () => {
   console.log(`Listening on port`, PORT);
 });
