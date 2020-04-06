@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const keys = require('./config/keys');
 
 require('./models/User');
@@ -10,7 +11,6 @@ require('./models/Blog');
 require('./services/passport');
 require('./services/cache');
 
-console.log('Index before mongoose');
 mongoose.Promise = global.Promise;
 //mongoose.connect(keys.mongoURI, { useMongoClient: true });
 mongoose.connect(keys.mongoURI, {
@@ -25,7 +25,7 @@ mongoose.connect(keys.mongoURI, {
 });
 
 const app = express();
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(
   cookieSession({
@@ -38,6 +38,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/blogRoutes')(app);
+require('./routes/uploadRoutes')(app);
 
 if (['production', 'ci'].includes(process.env.NODE_ENV)) {
   app.use(express.static('client/build'));
