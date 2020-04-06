@@ -4,5 +4,7 @@ nohup.out
 .DS_Store
 yarn.lock
 *lock.json
-dev-old.js
+dev*.js
+
+
 
